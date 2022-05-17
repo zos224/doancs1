@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAWIND - Du lịch trong nước</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><b class="neon">TRAWIND</b></li>
+            <li class="list">
+                <a href="./index.html">
+                    <span class="text">TRANG CHỦ</span>
+                </a>
+            </li>
+            <li class="list" id="dulichtrongnuoc">
+                <a href="#">
+                    <span class="text" >
+                        DU LỊCH TRONG NƯỚC
+                    </span>
+                </a>
+                    <table>
+                        <tr>
+                            <th><a href="#" style="color: rgb(255, 0, 0); font-size: 17px">MIỀN BẮC</a></th>
+                            <th><a href="#" style="color: rgb(255, 0, 0); font-size: 17px">MIỀN TRUNG</a></th>
+                            <th><a href="#" style="color: rgb(255, 0, 0); font-size: 17px">MIỀN NAM</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Hà Nội</a></th>
+                            <th><a href="#">Quảng Bình</a></th>
+                            <th><a href="#">Phú Quốc</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Sapa</a></th>
+                            <th><a href="#">Huế</a></th>
+                            <th><a href="#">Côn Đảo</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Cao Bằng</a></th>
+                            <th><a href="#">Hội An</a></th>
+                            <th><a href="#">Cà Mau</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Hạ Long</a></th>
+                            <th><a href="#">Đà Nẵng</a></th>
+                        </tr>                            
+                        <tr>
+                            <th></th>
+                            <th><a href="#">Nha Trang</a></th>
+                        </tr>
+                    </table>
+            </li>
+            <li class="list" id="hottour">
+                <a href="#hottourpage">
+                    <span class="text" >
+                        HOT TOUR
+                    </span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">Tour Khuyến Mãi</a>
+                    </li>
+                </ul>
+                        
+                   
+            </li>
+            <li class="list">
+                <a href="#chiase">
+                    <span class="text">
+                        CHIA SẺ
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#footer">
+                    <span class="text">
+                        LIÊN HỆ
+                    </span>
+                </a>
+            </li>
+            <li class="account">
+                <a href="#sign" onclick="clicksign()"><i class="fa-solid fa-user"></i>
+                </a>
+                <div id="sign">
+                    <div id="signin_contain">
+                        <button style="float: right; border: none;background-color:transparent; cursor: pointer;" ><i class="fa-regular fa-circle-xmark" onclick="clickclose()"></i></button>
+                        <div id="title">
+                            CHÀO MỪNG BẠN TRỞ LẠI
+                        </div>
+                        <div style="font-size: 25px; margin-top: 20px; border-bottom: 2px solid rgb(219, 203, 203)">Đăng nhập</div>
+                        <form action="" id="signinform"> </form> 
+                        <input type="text" name="username" id="username" placeholder="Tên đăng nhập" form="signinform" required>
+                        <br>
+                        <input type="password" name="password" id="password" placeholder="Mật khẩu" form="signinform" required> <br>
+                        <a href="" style="text-decoration: none; font-style:italic; margin-left: 140px">Quên mật khẩu?</a> <br>
+                        <input type="submit" value="Đăng nhập" form="signinform">
+                        <br>
+                        <a href="#signup_contain" onclick="clicksignup()">Bạn chưa có tài khoản? Bấm vào đây để đăng ký</a>
+                        <br>
+                        <i class="fa-brands fa-facebook" style="color: blue; font-size: 40px; margin-top: 15px; cursor:pointer; margin-right: 30px" ></i>
+                        <i class="fa-brands fa-google" style="color: red; font-size: 40px; margin-top: 15px; cursor:pointer;"></i>
+                    </div>
+                    <div id="signup_contain">
+                        <button style="float: right; border: none;background-color:transparent; cursor: pointer;" ><i class="fa-regular fa-circle-xmark" onclick="clickclose()"></i></button>
+                        <div id="title">
+                            CHÀO MỪNG BẠN ĐẾN VỚI TRAWIND
+                        </div>
+                        <div style="font-size: 25px; margin-top: 20px; border-bottom: 2px solid rgb(219, 203, 203)">Đăng ký</div>
+                        <form action="" id="signupform"> </form> 
+                        <br>
+                        <input type="email" name="email" id="email" required placeholder="Email"> <br>
+                        <input type="text" name="usernamesu" id="usernamesu" placeholder="Tên đăng nhập" form="signupform" required> <br>
+                        <input type="password" name="passwordsu" id="passwordsu" placeholder="Mật khẩu" form="signupform" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" onkeyup="checkpw()"> <br>
+                        <h5 id="checkchuhoa" style="margin-right: 20px; margin-top: 10px">* Có ít nhất một chữ cái viết hoa</h5> <br>
+                        <h5 id="checkchuso" style="margin-right: 78px;">* Có ít nhất một chữ số</h5> <br>
+                        <h5 id="checkdodai" style="margin-right: 107px;">* Có ít nhất 8 ký tự</h5> <br>
+                        <input type="password" name="passwordsu2" id="passwordsu2" placeholder="Nhập lại mật khẩu" form="signupform" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" style="margin-top: 20px; border-bottom: 2px solid red;" onkeyup="checkpw2()"> <br>
+                        <h4 id="resultcheck"></h4>
+                        <br>
+                        <span>
+                            Bằng cách nhấp vào Đăng ký, bạn đồng ý với <a href="">Điều khoản, Chính sách dữ liệu</a> và <a href="">Chính sách cookie</a> của chúng tôi 
+                        </span>
+                        <br>
+                        <input type="submit" value="Đăng ký" form="signupform" style="margin-top: 50px">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="fakenavbar">
+    </div>
+    <div id="main_dltn">
+        <div id="bac">
+            <div class="title">
+                MIỀN BẮC
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="one">
+                        <img src="./images/hanoi.jpg" alt="">
+                        <div class="name">
+                            Hà Nội
+                        </div>
+                    </div>
+                    <div class="one">
+                        <img src="./images/namdinh.jpg" alt="">
+                        <div class="name">
+                            Nam Định
+                        </div>
+                    </div>
+                    <div class="one">
+                        <img src="./images/mocchau.jpg" alt="">
+                        <div class="name">
+                            Mộc Châu
+                        </div>
+                    </div>
+                    <div class="one">
+                        <img src="./images/halong.jpg" alt="">
+                        <div class="name">
+                            Hạ Long
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="justify-content:center;">
+                    <div class="one" style="margin-right: 4%;">
+                        <img src="./images/sapa.jpg" alt="">
+                        <div class="name">
+                            Sa Pa
+                        </div>
+                    </div>
+                    <div class="one">
+                        <img src="./images/ninhbinh.jpg" alt="">
+                        <div class="name">
+                            Ninh Bình
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAWIND</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><b class="neon">TRAWIND</b></li>
+            <li class="list">
+                <a href="./index.html">
+                    <span class="text">TRANG CHỦ</span>
+                </a>
+            </li>
+            <li class="list" id="dulichtrongnuoc">
+                <a href="#">
+                    <span class="text" >
+                        DU LỊCH TRONG NƯỚC
+                    </span>
+                </a>
+                    <table>
+                        <tr>
+                            <th><a href="#" style="color: rgb(255, 0, 0); font-size: 17px">MIỀN BẮC</a></th>
+                            <th><a href="#" style="color: rgb(255, 0, 0); font-size: 17px">MIỀN TRUNG</a></th>
+                            <th><a href="#" style="color: rgb(255, 0, 0); font-size: 17px">MIỀN NAM</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Hà Nội</a></th>
+                            <th><a href="#">Quảng Bình</a></th>
+                            <th><a href="#">Phú Quốc</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Sapa</a></th>
+                            <th><a href="#">Huế</a></th>
+                            <th><a href="#">Côn Đảo</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Cao Bằng</a></th>
+                            <th><a href="#">Hội An</a></th>
+                            <th><a href="#">Cà Mau</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Hạ Long</a></th>
+                            <th><a href="#">Đà Nẵng</a></th>
+                        </tr>                            
+                        <tr>
+                            <th></th>
+                            <th><a href="#">Nha Trang</a></th>
+                        </tr>
+                    </table>
+            </li>
+            <li class="list" id="hottour">
+                <a href="#hottourpage">
+                    <span class="text" >
+                        HOT TOUR
+                    </span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">Tour Khuyến Mãi</a>
+                    </li>
+                </ul>
+                        
+                   
+            </li>
+            <li class="list">
+                <a href="#chiase">
+                    <span class="text">
+                        CHIA SẺ
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#footer">
+                    <span class="text">
+                        LIÊN HỆ
+                    </span>
+                </a>
+            </li>
+            <li class="account">
+                <a href="#sign" onclick="clicksign()"><i class="fa-solid fa-user"></i>
+                </a>
+                <div id="sign">
+                    <div id="signin_contain">
+                        <button style="float: right; border: none;background-color:transparent; cursor: pointer;" ><i class="fa-regular fa-circle-xmark" onclick="clickclose()"></i></button>
+                        <div id="title">
+                            CHÀO MỪNG BẠN TRỞ LẠI
+                        </div>
+                        <div style="font-size: 25px; margin-top: 20px; border-bottom: 2px solid rgb(219, 203, 203)">Đăng nhập</div>
+                        <form action="" id="signinform"> </form> 
+                        <input type="text" name="username" id="username" placeholder="Tên đăng nhập" form="signinform" required>
+                        <br>
+                        <input type="password" name="password" id="password" placeholder="Mật khẩu" form="signinform" required> <br>
+                        <a href="" style="text-decoration: none; font-style:italic; margin-left: 140px">Quên mật khẩu?</a> <br>
+                        <input type="submit" value="Đăng nhập" form="signinform">
+                        <br>
+                        <a href="#signup_contain" onclick="clicksignup()">Bạn chưa có tài khoản? Bấm vào đây để đăng ký</a>
+                        <br>
+                        <i class="fa-brands fa-facebook" style="color: blue; font-size: 40px; margin-top: 15px; cursor:pointer; margin-right: 30px" ></i>
+                        <i class="fa-brands fa-google" style="color: red; font-size: 40px; margin-top: 15px; cursor:pointer;"></i>
+                    </div>
+                    <div id="signup_contain">
+                        <button style="float: right; border: none;background-color:transparent; cursor: pointer;" ><i class="fa-regular fa-circle-xmark" onclick="clickclose()"></i></button>
+                        <div id="title">
+                            CHÀO MỪNG BẠN ĐẾN VỚI TRAWIND
+                        </div>
+                        <div style="font-size: 25px; margin-top: 20px; border-bottom: 2px solid rgb(219, 203, 203)">Đăng ký</div>
+                        <form action="" id="signupform"> </form> 
+                        <br>
+                        <input type="email" name="email" id="email" required placeholder="Email"> <br>
+                        <input type="text" name="usernamesu" id="usernamesu" placeholder="Tên đăng nhập" form="signupform" required> <br>
+                        <input type="password" name="passwordsu" id="passwordsu" placeholder="Mật khẩu" form="signupform" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" onkeyup="checkpw()"> <br>
+                        <h5 id="checkchuhoa" style="margin-right: 20px; margin-top: 10px">* Có ít nhất một chữ cái viết hoa</h5> <br>
+                        <h5 id="checkchuso" style="margin-right: 78px;">* Có ít nhất một chữ số</h5> <br>
+                        <h5 id="checkdodai" style="margin-right: 107px;">* Có ít nhất 8 ký tự</h5> <br>
+                        <input type="password" name="passwordsu2" id="passwordsu2" placeholder="Nhập lại mật khẩu" form="signupform" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" style="margin-top: 20px; border-bottom: 2px solid red;" onkeyup="checkpw2()"> <br>
+                        <h4 id="resultcheck"></h4>
+                        <br>
+                        <span>
+                            Bằng cách nhấp vào Đăng ký, bạn đồng ý với <a href="">Điều khoản, Chính sách dữ liệu</a> và <a href="">Chính sách cookie</a> của chúng tôi 
+                        </span>
+                        <br>
+                        <input type="submit" value="Đăng ký" form="signupform" style="margin-top: 50px">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="slideshow">
+        <div class="slidebox">
+            <div class="slide"><img src="./images/caurong.jpg" alt=""></div>
+            <div class="slide"><img src="./images/dalat.jpg" alt=""></div>
+            <div class="slide"><img src="./images/phongnha.jpg" alt=""></div>
+            <div class="slide"><img src="./images/vinhhalong.jpg" alt=""></div>
+        </div>
+    </div>
+    <div class="booking">
+        <div class="row">
+            <h2  style="text-decoration:underline; text-decoration-color:red; margin-left: 24px">
+                TÌM KIẾM TOUR
+            </h2>
+            <span id="timnhanh">
+                <input type="text" name="timnhanh" size="30" placeholder="Tìm kiếm nhanh" style="padding: 3px; border: 0; border-top-left-radius: 5px; border-bottom-left-radius: 5px; outline:0px">
+                <button type="submit" style="border: 0; border-left: 1px solid black; border-top-right-radius: 5px; border-bottom-right-radius: 5px; cursor:pointer"><i class="fa-solid fa-magnifying-glass" style="font-size: 20px; padding: 3px;"></i></button>
+        </div>
+        <div class="row" id="book">
+            <div class="boxbook" style=" margin-left: 24px">
+                <label for="diemdi" style="font-size: 17px;">
+                    <i class="fa-solid fa-location-dot" style="color: blue;"></i>
+                    Điểm đi</label>
+                <select name="diemdi" id="diemdi">\
+                    <option value="">Chọn điểm đi</option>
+                    <option value="hochiminh">TP. Hồ Chí Minh</option>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="danang">Đà Nẵng</option>
+                    <option value="cantho">Cần Thơ</option>
+                    <option value="haiphong">Hải Phòng</option>
+                    <option value="binhduong">Bình Dương</option>
+                    <option value="nhatrang">Nha Trang</option>
+                    <option value="hue">Huế</option>
+                    <option value="quynhon">Quy Nhơn</option>
+                    <option value="vungtau">Vũng Tàu</option>
+                </select>
+            </div>
+            <div class="boxbook" style="border: none;">
+                <i class="fa-solid fa-arrow-right-arrow-left" style="color: blue; font-size: 17px"></i>
+            </div>
+            <div class="boxbook">
+                <label for="diemden" style="font-size: 17px;">
+                    <i class="fa-solid fa-location-dot" style="color: blue;"></i>
+                    Điểm đến
+                </label>
+                <select name="diemden" id="diemden">
+                    <option value="">Chọn điểm đến</option>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hue">Huế</option>
+                    <option value="sapa">Sa Pa</option>
+                    <option value="danang">Đà Nẵng</option>
+                    <option value="hoian">Hội An</option>
+                    <option value="dalat">Đà Lạt</option>
+                    <option value="quynhon">Quy Nhơn</option>
+                    <option value="halong">Hạ Long</option>
+                </select>
+            </div>
+            <div class="boxbook">
+                <label for="lichtrinh" style="font-size: 17px;">
+                    <i class="fa-solid fa-calendar-days" style="color: blue;"></i>
+                    Lịch trình
+                </label>
+                <select name="lichtrinh" id="lichtrinh">
+                    <option value="">Chọn lịch trình</option>
+                    <option value="1ngay0dem">1 Ngày - 0 Đêm</option>
+                    <option value="1ngay1dem">1 Ngày - 1 Đêm</option>
+                    <option value="2ngay1dem">2 Ngày - 1 Đêm</option>
+                    <option value="2ngay2dem">2 Ngày - 2 Đêm</option>
+                    <option value="3ngay2dem">3 Ngày - 2 Đêm</option>
+                    <option value="3ngay3dem">3 Ngày - 3 Đêm</option>
+                    <option value="5ngay5dem">5 Ngày - 5 Đêm</option>
+                    <option value="7ngay7dem">7 Ngày - 7 Đêm</option>
+                </select>
+            </div>
+            <div class="boxbook">
+                <label for="gia" style="font-size: 17px;">
+                    <i class="fa-solid fa-dollar-sign" style="color: blue;"></i>
+                    Khoảng giá
+                </label>
+                <select name="gia" id="gia">
+                    <option value="">Chọn khoảng giá</option>
+                    <option value="duoi2trieu">Dưới 2 triệu</option>
+                    <option value="2den5trieu">Từ 2 - 5 triệu</option>
+                    <option value="5den10">Từ 5 - 10 triệu</option>
+                    <option value="10den50">Từ 10 - 50 triệu</option>
+                    <option value="tren50">Trên 50 triệu</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div id="submitbt">
+                <button type="submit">Tìm kiếm</button>
+            </div> 
+        </div>
+    </div>
+    <div class="hottour" id="hottourpage">
+        <a href="">
+            <h2 style="text-decoration:underline; text-decoration-color:red; color: black">
+                HOT TOUR
+            </h2>
+        </a>
+        <div id="tour">
+            <div class="row">
+                <div class="tour">
+                    <img src="./images/hoian1.jpg" alt="">
+                    <div class="quantam">
+                        <button><i class="fa-solid fa-heart"></i></button>
+                        <span>
+                            <i class="fa-solid fa-star" id="danhgia"></i>
+                            <b id="text">9.5</b>
+                        </span>
+                    </div>
+                    <div class="tourcontent">
+                        <p><i class="fa-solid fa-calendar-day"></i> 4 Ngày - 3 Đêm</p>
+                        <p>Hà Nội - Đà Nẵng - Bà Nà Hill - Phố cổ Hội An</p>
+                        <p>Nơi khởi hành: Hà Nội</p>
+                        <div class="datngay">
+                            <p>Giá: <del>5,000,000 VNĐ</del></p>
+                            <span id="giagoc">4,500,000 VNĐ</span>
+                            <span id="giamgia">10% GIẢM</span>
+                            <div>
+                                <button type="submit">Đặt Ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour">
+                    <img src="./images/coto.jpg" alt="">
+                    <div class="quantam">
+                        <button><i class="fa-solid fa-heart"></i></button>
+                        <span>
+                            <i class="fa-solid fa-star" id="danhgia"></i>
+                            <b id="text">9.3</b>
+                        </span>
+                    </div>
+                    <div class="tourcontent">
+                        <p><i class="fa-solid fa-calendar-day"></i> 3 Ngày - 2 Đêm</p>
+                        <p>Hà Nội - Cô Tô</p>
+                        <p>Nơi khởi hành: Hà Nội</p>
+                        <div class="datngay">
+                            <p>Giá: <del>4,000,000 VNĐ</del></p>
+                            <span id="giagoc">3,600,000 VNĐ</span>
+                            <span id="giamgia">10% GIẢM</span>
+                            <div>
+                                <button type="submit">Đặt Ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour">
+                    <img src="./images/nhatrang.jpg" alt="">
+                    <div class="quantam">
+                        <button><i class="fa-solid fa-heart"></i></button>
+                        <span>
+                            <i class="fa-solid fa-star" id="danhgia"></i>
+                            <b id="text">8.5</b>
+                        </span>
+                    </div>
+                    <div class="tourcontent">
+                        <p><i class="fa-solid fa-calendar-day"></i> 4 Ngày - 3 Đêm</p>
+                        <p>Hà Nội - Nha Trang</p>
+                        <p>Nơi khởi hành: Hà Nội</p>
+                        <div class="datngay">
+                            <p>Giá: <del>7,000,000 VNĐ</del></p>
+                            <span id="giagoc">6,000,000 VNĐ</span>
+                            <span id="giamgia">15% GIẢM</span>
+                            <div>
+                                <button type="submit">Đặt Ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour">
+                    <img src="./images/phuquoc.jpg" alt="">
+                    <div class="quantam">
+                        <button><i class="fa-solid fa-heart"></i></button>
+                        <span>
+                            <i class="fa-solid fa-star" id="danhgia"></i>
+                            <b id="text">9.0</b>
+                        </span>
+                    </div>
+                    <div class="tourcontent">
+                        <p><i class="fa-solid fa-calendar-day"></i> 2 Ngày - 2 Đêm</p>
+                        <p>Đà Nẵng - Phú Quốc</p>
+                        <p>Nơi khởi hành: Đà Nẵng</p>
+                        <div class="datngay">
+                            <p>Giá: <del>5,000,000 VNĐ</del></p>
+                            <span id="giagoc">4,500,000 VNĐ</span>
+                            <span id="giamgia">10% GIẢM</span>
+                            <div>
+                                <button type="submit">Đặt Ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tour">
+                    <img src="./images/dalat1.jpg" alt="">
+                    <div class="quantam">
+                        <button><i class="fa-solid fa-heart"></i></button>
+                        <span>
+                            <i class="fa-solid fa-star" id="danhgia"></i>
+                            <b id="text">9.5</b>
+                        </span>
+                    </div>
+                    <div class="tourcontent">
+                        <p><i class="fa-solid fa-calendar-day"></i> 4 Ngày - 3 Đêm</p>
+                        <p>Hà Nội - Đà Lạt</p>
+                        <p>Nơi khởi hành: Hà Nội</p>
+                        <div class="datngay">
+                            <p>Giá: <del>10,000,000 VNĐ</del></p>
+                            <span id="giagoc">9,000,000 VNĐ</span>
+                            <span id="giamgia">10% GIẢM</span>
+                            <div>
+                                <button type="submit">Đặt Ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour">
+                    <img src="./images/dongthienduong.jpg" alt="">
+                    <div class="quantam">
+                        <button><i class="fa-solid fa-heart"></i></button>
+                        <span>
+                            <i class="fa-solid fa-star" id="danhgia"></i>
+                            <b id="text" style="top:20px; right: 20px">10</b>
+                        </span>
+                    </div>
+                    <div class="tourcontent">
+                        <p><i class="fa-solid fa-calendar-day"></i> 3 Ngày - 2 Đêm</p>
+                        <p>TP. Hồ Chí Minh - Quảng Bình</p>
+                        <p>Nơi khởi hành: TP. Hồ Chí Minh</p>
+                        <div class="datngay">
+                            <p>Giá: <del>7,000,000 VNĐ</del></p>
+                            <span id="giagoc">4,999,000 VNĐ</span>
+                            <span id="giamgia">30% GIẢM</span>
+                            <div>
+                                <button type="submit">Đặt Ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour">
+                        <img src="./images/hue.jpg" alt="">
+                        <div class="quantam">
+                            <button><i class="fa-solid fa-heart"></i></button>
+                            <span>
+                                <i class="fa-solid fa-star" id="danhgia"></i>
+                                <b id="text">8.7</b>
+                            </span>
+                        </div>
+                    <div class="tourcontent">
+                        <p><i class="fa-solid fa-calendar-day"></i> 2 Ngày - 2 Đêm</p>
+                        <p>TP. Hồ Chí Minh - Huế</p>
+                        <p>Nơi khởi hành: TP. Hồ Chí Minh</p>
+                        <div class="datngay">
+                            <p>Giá: <del>5,000,000 VNĐ</del></p>
+                            <span id="giagoc">4,000,000 VNĐ</span>
+                            <span id="giamgia">15% GIẢM</span>
+                            <div>
+                                <button type="submit">Đặt Ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour">
+                        <img src="./images/caobang.jpg" alt="">
+                        <div class="quantam">
+                            <button><i class="fa-solid fa-heart"></i></button>
+                            <span>
+                                <i class="fa-solid fa-star" id="danhgia"></i>
+                                <b id="text">8.5</b>
+                            </span>
+                        </div>
+                    <div class="tourcontent">
+                        <p><i class="fa-solid fa-calendar-day"></i> 3 Ngày - 3 Đêm</p>
+                        <p>Hà Nội - Cao Bằng</p>
+                        <p>Nơi khởi hành: Hà Nội</p>
+                        <div class="datngay">
+                            <p>Giá: <del>5,000,000 VNĐ</del></p>
+                            <span id="giagoc">4,500,000 VNĐ</span>
+                            <span id="giamgia">10% GIẢM</span>
+                            <div>
+                                <button type="submit">Đặt Ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="khamphavn">
+        <a href="">
+            <h2 style="text-decoration:underline; text-decoration-color:red; color:black">
+                KHÁM PHÁ VIỆT NAM
+            </h2>
+        </a>
+        <p>Việt Nam - một đất nước nhỏ bé nhưng được thiên nhiên ưu ái ban tặng những bức tranh đẹp đến nao lòng. Đó là những bờ biển dài với bãi cát trắng, 
+            với tiếng sóng vỗ rì rào, với làn nước trong xanh. Đó là những hang động dài hàng cây số với những khối thạch nhũ kì diệu. Đó là những khu rừng 
+            ngập tràn tiếng chim đang gọi bạn, ngập tràn hoa lá thi nhau đua nở. Tất cả những thứ đó đã tạo nên một Việt Nam thơ mộng, đẹp đẽ biết bao! 
+        </p>
+        <div class="diadiemkhampha">
+            <div class="tinh">
+                <img src="./images/banahill.jpg" alt="Đà Nẵng">
+                <div class="text">
+                    Đà Nẵng
+                </div>
+            </div>
+            <div class="tinh">
+                <img src="./images/hoguom.png" alt="Hà Nội">
+                <div class="text">
+                    Hà Nội
+                </div>
+            </div>
+            <div class="tinh">
+                <img src="./images/cungdinhhue.jpg" alt="Huế">
+                <div class="text" style="left: 45%">
+                    Huế
+                </div>
+            </div>
+            <div class="tinh">
+                <img src="./images/muine.jpeg" alt="Bình Thuận">
+                <div class="text" style="left: 33%;">
+                    Bình Thuận
+                </div>
+            </div>
+            <div class="tinh">
+                <img src="./images/quynhon.jpg" alt="Bình Định">
+                <div class="text">
+                    Bình Định
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="chiase">
+        <a href="">
+            <h2 style="text-decoration:underline; text-decoration-color:red; color: black">CHIA SẺ</h2>
+        </a>
+        <div id="contain">
+            <div id="left">
+                <div class="content">
+                    <img src="./images/bamboo.jpg" alt="">
+                    <div class="title_time">
+                        <div class="title">
+                            CÁC PHƯƠNG TIỆN DI CHUYỂN AN TOÀN MÙA DỊCH
+                        </div>
+                        <div class="time" style="margin-top: 75px;">
+                            <i>22/04/2022</i>
+                            <i class="fa-solid fa-eye"></i> 
+                            <i>100 lượt xem</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="./images/phuquoc.jpg" alt="">
+                    <div class="title_time">
+                        <div class="title">
+                            THỜI ĐIỂM THÍCH HỢP NHẤT TRONG NĂM ĐỂ ĐI PHÚ QUỐC
+                        </div>
+                        <div class="time" style="margin-top: 75px;">
+                            <i>22/04/2022</i>
+                            <i class="fa-solid fa-eye"></i> 
+                            <i>65 lượt xem</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="./images/condao.jpg" alt="">
+                    <div class="title_time">
+                        <div class="title">
+                            KINH NGHIỆM ĐI CÔN ĐẢO
+                        </div>
+                        <div class="time" style="margin-top: 120px;">
+                            <i>14/04/2022</i>
+                            <i class="fa-solid fa-eye"></i> 
+                            <i>32 lượt xem</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="./images/nhatrang2.jpg" alt="">
+                    <div class="title_time">
+                        <div class="title">
+                            NÊN ĐI NHA TRANG HAY PHÚ QUỐC?
+                        </div>
+                        <div class="time">
+                            <i>10/04/2022</i>
+                            <i class="fa-solid fa-eye"></i> 
+                            <i>105 lượt xem</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="right">
+                <div class="content">
+                    <img src="./images/monanhue.jpg" alt="">
+                    <div class="title_time">
+                        <div class="title">
+                            10 MÓN ĂN BẠN NÊN THỬ KHI ĐẾN HUẾ
+                        </div>
+                        <div class="time">
+                            <i>15/04/2022</i>
+                            <i class="fa-solid fa-eye"></i> 
+                            <i>202 lượt xem</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="./images/sunwheel.jpg" alt="">
+                    <div class="title_time">
+                        <div class="title">
+                            9 ĐỊA ĐIỂM KHÔNG NÊN BỎ LỠ KHI ĐẾN ĐÀ NẴNG
+                        </div>
+                        <div class="time">
+                            <i>13/03/2022</i>
+                            <i class="fa-solid fa-eye"></i> 
+                            <i>96 lượt xem</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="./images/hangsondoong.jpg" alt="">
+                    <div class="title_time">
+                        <div class="title">
+                            KINH NGHIỆM KHÁM PHÁ HANG SƠN ĐOÒNG
+                        </div>
+                        <div class="time">
+                            <i>24/04/2022</i>
+                            <i class="fa-solid fa-eye"></i> 
+                            <i>51 lượt xem</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="./images/dulich.jpg" alt="">
+                    <div class="title_time">
+                        <div class="title">
+                            LÀM THẾ NÀO ĐỂ CÓ MỘT CHUYẾN DU LỊCH TỐI ƯU?
+                        </div>
+                        <div class="time">
+                            <i>12/04/2022</i>
+                            <i class="fa-solid fa-eye"></i> 
+                            <i>39 lượt xem</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="other_button">
+            <button type="submit">Xem thêm >></button>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer_container">
+            <div id="left">
+                <div id="lienhe">
+                    <h2 style="text-decoration:underline; text-decoration-color:rgb(255, 0, 0); color: rgb(0, 0, 0)">
+                        LIÊN HỆ
+                    </h2>
+                    <div id="info">
+                        <p>Văn phòng chính: Số 224 Hùng Vương, Hải Châu, Đà Nẵng</p>
+                        <p>Văn phòng: 0224 224 224</p>
+                        <p>Hotline: 0224 224 224</p>
+                        <p>Email: lienhe@trawind.vn</p>
+                    </div>
+                </div>
+                <div id="thanhtoan">
+                    <h2 style="text-decoration:underline; text-decoration-color:rgb(255, 0, 0); color: rgb(0, 0, 0); margin-top:10px;">
+                        CHẤP NHẬN THANH TOÁN
+                    </h2>
+                    <div id="payment">
+                        <img src="./images/vnpay_qr1.png" alt="">
+                        <img src="./images/vs.png" alt="">
+                        <img src="./images/jcb.png" alt="">
+                        <img src="./images/mtc.png" alt="">
+                        <img src="./images/shopeepay.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="middle">
+                <h2 style="text-decoration:underline; text-decoration-color:rgb(255, 0, 0); color: rgb(0, 0, 0)">
+                    KẾT NỐI CÙNG CHÚNG TÔI
+                </h2>
+                <div id="mxh">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+            <div id="right">
+                <p>Với phương châm “Sự hài lòng của khách hàng là niềm vui, động lực của chúng tôi” cùng chính sách đa dạng hóa sản phẩm và bảo đảm thực hiện đúng những cam kết về chất lượng, Venus Travel đã định vị trong lòng khách hàng là thương hiệu lữ hành hàng đầu về chất lượng dịch vụ cho khách hàng cùng trải nghiệm.</p>
+                <div id="form">
+                    <p>ĐĂNG KÝ NHẬN TIN KHUYẾN MÃI</p>
+                    <form action="">
+                        <div class="row"> 
+                            <label for="hoten">Họ và tên <i>*</i></label>
+                            <input type="text" name="hoten" id="hoten" placeholder="Nhập họ và tên">
+                        </div>
+                        <div class="row">
+                            <label for="email">Email <i>*</i></label>
+                            <input type="email" name="email" id="email" placeholder="Nhập email">
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="Đăng ký">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function clicksign()
+        {
+            document.getElementById('sign').style.display= 'block';
+        }
+        function clickclose()
+        {
+            document.getElementById('sign').style.display= 'none';
+        }
+        function clicksignup()
+        {
+            document.getElementById('signin_contain').style.display= 'none';
+            document.getElementById('signup_contain').style.display= 'block';
+        }
+        window.addEventListener('mouseup',function(event){
+            var signin_contain = document.getElementById('signin_contain');
+            var signup_contain = document.getElementById('signup_contain');
+            if (signin_contain.style.display != 'none')
+            {
+                if(event.target != signin_contain && event.target.parentNode != signin_contain){
+                    document.getElementById('sign').style.display = 'none';
+                }
+            }
+            else if (signup_contain.style.display != 'none')
+            {
+                if(event.target != signup_contain && event.target.parentNode != signup_contain){
+                    document.getElementById('sign').style.display = 'none';
+                    document.getElementById('signin_contain').style.display= 'block';
+                    document.getElementById('signup_contain').style.display= 'none';
+                }
+            }      
+      });  
+        function checkpw()
+        {
+            var a = document.getElementById("passwordsu").value;
+            var length = a.length;
+            if (length == 0)
+            {
+                document.getElementById("checkdodai").style.color = 'red';
+                document.getElementById("checkchuhoa").style.color = 'red';
+                document.getElementById("checkchuso").style.color = 'red';
+            }
+            if (length >= 8)
+            {
+                document.getElementById("checkdodai").style.color = 'green';
+            }
+            var i = 0;
+            for (i; i < length; i++)
+            {
+                if (!isNaN(a[i]))
+                {
+                    document.getElementById("checkchuso").style.color = 'green';
+                }
+                else if (a[i] == a[i].toUpperCase() && isNaN(a[i]))
+                {
+                    document.getElementById("checkchuhoa").style.color = 'green';
+                }
+            }
+        }
+        function checkpw2()
+        {
+            var pw = document.getElementById("passwordsu").value;
+            var pw2 = document.getElementById("passwordsu2").value;
+            if (pw2.length == 0)
+            {
+                document.getElementById('resultcheck').innerText = '';
+                document.getElementById('passwordsu2').style.borderBottomColor = 'red';
+            }
+            else if (pw != pw2)
+            {
+                document.getElementById('resultcheck').innerText = 'Mật khẩu không khớp';
+                document.getElementById('resultcheck').style.color = 'red';
+                document.getElementById('passwordsu2').style.borderBottomColor = 'red';
+            }
+            else
+            {
+                document.getElementById('resultcheck').innerText = '';
+                document.getElementById('passwordsu2').style.borderBottomColor = 'green';
+            }
+        }
+    </script>
+</body>
+</html>
